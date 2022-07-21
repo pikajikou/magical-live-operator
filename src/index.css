@@ -140,11 +140,6 @@ body {
   left: 990px;
 }
 
-#window .kigae {
-  left: 320px;
-  background: red;
-}
-
 #center_lyric {
   position: absolute;
   width: 720px;
@@ -175,6 +170,7 @@ body {
   left: 250px;
   top: 630px;
   background: rgba(200, 200, 0, 0.8);
+  z-index: 3;
 }
  
 #container {

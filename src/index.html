@@ -1,0 +1,208 @@
+<html>
+
+<head>
+  <title>ライブ オペレーター</title>
+  <link rel="stylesheet" href="index.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <div id="background">
+    <div id="overlay">
+      <div class="explain">
+        マジカル ライブ オペレーター：
+        <ul>
+          　<li>あなたのオペレーションでライブを盛り上げよう！<br>
+          <li>卓のスイッチを操作して<span style="color:orange"><b>照明</b></span>やペンライトを操作できるよ<br>
+          <li>ミクの衣装も切り替え可能！<br>
+          <li>右下から対象楽曲の切り替えが出来ます！<br>
+          <li>左下のメニューで再生、歌詞頭出し、一時停止、最初から再生が出来ます！<br>
+        </ul>
+      </div>
+      <div>
+        <button class="play" disabled>スタート!</button>
+      </div>
+    </div>
+
+    <!-- 画面の枠 -->
+    <div id="window">
+      <!-- ステージ背景 -->
+      <img id="backstage" class="w_child" src="../img/background/background.png">
+
+      <!-- ステージ照明 -->
+      <!-- 上段左 -->
+      <img id="upleftwhite" class="w_child light" src="../img/upperleft/upperleft_white.png">
+      <img id="upleftmiku" class="w_child light" src="../img/upperleft/upperleft_lightblue.png">
+      <img id="upleftrin" class="w_child light" src="../img/upperleft/upperleft_orange.png">
+      <img id="upleftlen" class="w_child light" src="../img/upperleft/upperleft_yellow.png">
+      <img id="upleftluka" class="w_child light" src="../img/upperleft/upperleft_pink.png">
+      <img id="upleftkaito" class="w_child light" src="../img/upperleft/upperleft_blue.png">
+      <img id="upleftmeiko" class="w_child light" src="../img/upperleft/upperleft_red.png">
+
+      <!-- 中段左 -->
+      <img id="midleftwhite" class="w_child light" src="../img/middleleft/middleleft_white.png">
+      <img id="midleftmiku" class="w_child light" src="../img/middleleft/middleleft_lightblue.png">
+      <img id="midleftrin" class="w_child light" src="../img/middleleft/middleleft_orange.png">
+      <img id="midleftlen" class="w_child light" src="../img/middleleft/middleleft_yellow.png">
+      <img id="midleftluka" class="w_child light" src="../img/middleleft/middleleft_pink.png">
+      <img id="midleftkaito" class="w_child light" src="../img/middleleft/middleleft_blue.png">
+      <img id="midleftmeiko" class="w_child light" src="../img/middleleft/middleleft_red.png">
+
+      <!-- 下段左 -->
+      <img id="lowleftwhite" class="w_child light" src="../img/lowerleft/lowerleft_white.png">
+      <img id="lowleftmiku" class="w_child light" src="../img/lowerleft/lowerleft_lightblue.png">
+      <img id="lowleftrin" class="w_child light" src="../img/lowerleft/lowerleft_orange.png">
+      <img id="lowleftlen" class="w_child light" src="../img/lowerleft/lowerleft_yellow.png">
+      <img id="lowleftluka" class="w_child light" src="../img/lowerleft/lowerleft_pink.png">
+      <img id="lowleftkaito" class="w_child light" src="../img/lowerleft/lowerleft_blue.png">
+      <img id="lowleftmeiko" class="w_child light" src="../img/lowerleft/lowerleft_red.png">
+
+      <!-- 上段右 -->
+      <img id="uprightwhite" class="w_child light" src="../img/upperright/upperright_white.png">
+      <img id="uprightmiku" class="w_child light" src="../img/upperright/upperright_lightblue.png">
+      <img id="uprightrin" class="w_child light" src="../img/upperright/upperright_orange.png">
+      <img id="uprightlen" class="w_child light" src="../img/upperright/upperright_yellow.png">
+      <img id="uprightluka" class="w_child light" src="../img/upperright/upperright_pink.png">
+      <img id="uprightkaito" class="w_child light" src="../img/upperright/upperright_blue.png">
+      <img id="uprightmeiko" class="w_child light" src="../img/upperright/upperright_red.png">
+
+      <!-- 中段右 -->
+      <img id="midrightwhite" class="w_child light" src="../img/middleright/middleright_white.png">
+      <img id="midrightmiku" class="w_child light" src="../img/middleright/middleright_lightblue.png">
+      <img id="midrightrin" class="w_child light" src="../img/middleright/middleright_orange.png">
+      <img id="midrightlen" class="w_child light" src="../img/middleright/middleright_yellow.png">
+      <img id="midrightluka" class="w_child light" src="../img/middleright/middleright_pink.png">
+      <img id="midrightkaito" class="w_child light" src="../img/middleright/middleright_blue.png">
+      <img id="midrightmeiko" class="w_child light" src="../img/middleright/middleright_red.png">
+
+      <!-- 下段右 -->
+      <img id="lowrightwhite" class="w_child light" src="../img/lowerright/lowerright_white.png">
+      <img id="lowrightmiku" class="w_child light" src="../img/lowerright/lowerright_lightblue.png">
+      <img id="lowrightrin" class="w_child light" src="../img/lowerright/lowerright_orange.png">
+      <img id="lowrightlen" class="w_child light" src="../img/lowerright/lowerright_yellow.png">
+      <img id="lowrightluka" class="w_child light" src="../img/lowerright/lowerright_pink.png">
+      <img id="lowrightkaito" class="w_child light" src="../img/lowerright/lowerright_blue.png">
+      <img id="lowrightmeiko" class="w_child light" src="../img/lowerright/lowerright_red.png">
+
+      <div id="center_lyric" class="lyricsframe" display="inline-block">あああ</div>
+
+      <!-- 操作卓 -->
+      <div>
+        <!-- 上段左 -->
+        <buttone class="w_child lightbtn uplightbtn whitec" id="upleftwhitebtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn mikuc" id="upleftmikubtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn rinc" id="upleftrinbtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn lenc" id="upleftlenbtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn lukac" id="upleftlukabtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn kaitoc" id="upleftkaitobtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn meikoc" id="upleftmeikobtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn offc" id="upleftoffbtn"></buttone>
+
+        <!-- 中段左 -->
+        <buttone class="w_child lightbtn midlightbtn whitec" id="midleftwhitebtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn mikuc" id="midleftmikubtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn rinc" id="midleftrinbtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn lenc" id="midleftlenbtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn lukac" id="midleftlukabtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn kaitoc" id="midleftkaitobtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn meikoc" id="midleftmeikobtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn offc" id="midleftoffbtn"></buttone>
+
+        <!-- 下段左 -->
+        <buttone class="w_child lightbtn lowlightbtn whitec" id="lowleftwhitebtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn mikuc" id="lowleftmikubtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn rinc" id="lowleftrinbtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn lenc" id="lowleftlenbtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn lukac" id="lowleftlukabtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn kaitoc" id="lowleftkaitobtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn meikoc" id="lowleftmeikobtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn offc" id="lowleftoffbtn"></buttone>
+
+        <!-- 上段右 -->
+        <buttone class="w_child lightbtn uplightbtn whitecr" id="uprightwhitebtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn mikucr" id="uprightmikubtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn rincr" id="uprightrinbtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn lencr" id="uprightlenbtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn lukacr" id="uprightlukabtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn kaitocr" id="uprightkaitobtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn meikocr" id="uprightmeikobtn"></buttone>
+        <buttone class="w_child lightbtn uplightbtn offcr" id="uprightoffbtn"></buttone>
+
+        <!-- 中段右 -->
+        <buttone class="w_child lightbtn midlightbtn whitecr" id="midrightwhitebtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn mikucr" id="midrightmikubtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn rincr" id="midrightrinbtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn lencr" id="midrightlenbtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn lukacr" id="midrightlukabtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn kaitocr" id="midrightkaitobtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn meikocr" id="midrightmeikobtn"></buttone>
+        <buttone class="w_child lightbtn midlightbtn offcr" id="midrightoffbtn"></buttone>
+
+        <!-- 下段右 -->
+        <buttone class="w_child lightbtn lowlightbtn whitecr" id="lowrightwhitebtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn mikucr" id="lowrightmikubtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn rincr" id="lowrightrinbtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn lencr" id="lowrightlenbtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn lukacr" id="lowrightlukabtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn kaitocr" id="lowrightkaitobtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn meikocr" id="lowrightmeikobtn"></buttone>
+        <buttone class="w_child lightbtn lowlightbtn offcr" id="lowrightoffbtn"></buttone>
+      </div>
+    </div>
+
+
+    <div id="container" , style="user-select: none; display: inline-block;">
+
+      <button id="strinfo" width="130" height="70">文字効果</button>
+      <select id="strselect" style="z-index: 1;">
+        <option value="popup">ポップアップ</option>
+        <option value="kurukuru">回転</option>
+        <option value="slidein">スラインドイン</option>
+        <option value="slideup">スライドアップ</option>
+        <option value="none">シンプル</option>
+      </select>
+
+      <button id="songtag" width="130" height="70">対象楽曲</button>
+      <select id="songselect" style="z-index: 1;">
+        <option value="sfirst" selected>Loading Memories</option>
+        <option value="ssecond">青に溶けた風船</option>
+        <option value="sthird">歌の欠片と</option>
+        <option value="sfourth">未完のストーリー</option>
+        <option value="sfifth">みはるかす</option>
+        <option value="ssixth">fear</option>
+      </select>
+
+      <button id="helpb" class="button" width="60" height="60" alt="サンプルボタン">help</button>
+    </div>
+    <div id="media"></div>
+
+    <div id="header">
+      <div id="meta">
+        <div id="artist"><strong>artist:</strong> <span>-</span></div>
+        <div id="song"><strong>song:</strong> <span>-</span></div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div id="control" style="display: inline;">
+        <button id="play" class="play button pushable ui" width="30" height="30" alt="サンプルボタン"
+          style="display: inline-block;">再生</button>
+        <button id="jump" class="button pushable ui" width="30" height="30" alt="サンプルボタン"
+          style="display: inline-block;">歌い出し</button>
+        <button id="pause" class="button pushable ui" width="30" height="30" alt="サンプルボタン"
+          style="display: inline-block;">一時停止</button>
+        <button id="rewind" class="button pushable ui" width="30" height="30" alt="サンプルボタン"
+          style="display: inline-block;">初めから</button>
+      </div>
+      <span id="phrase">-----</span>
+
+      <!-- シークバー -->
+      <div id="seekbar">
+        <div></div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </div>
+</body>
+
+</html>

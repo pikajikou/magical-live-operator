@@ -19,6 +19,8 @@ var nowUpRightLight = "";
 var nowMidRightLight = "";
 var nowLowRightLight = "";
 
+var nowCostume = "mikudefault";
+
 const animateWord = function (now, unit) {
   if (unit.contains(now)) {
     var textelements = document.getElementsByClassName("lyricsframe");
@@ -381,12 +383,28 @@ const lowRightMeikoBtn = document.querySelector("#lowrightmeikobtn");
 const lowRightOffBtn = document.querySelector("#lowrightoffbtn");
 
 
-
+const kigaeBtn = document.querySelector("#kigaebtn");
 
 const helpBtn = document.querySelector("#helpb");
 const overlayplayBtn = document.getElementsByClassName("play");
 const imglist = document.querySelectorAll("img");
 const songSelect = document.getElementById("songselect");
+
+// 衣装のid
+const cosList = [
+  "mikudefault",
+  "miku2013",
+  "miku2014",
+  "miku2015",
+  "miku2016",
+  "miku2017",
+  "miku2018",
+  "miku2019",
+  "miku2020s",
+  "miku2020w",
+  "miku2021",
+  "miku10th",
+];
 
 
 // 照明制御ボタンイベントリスナーセット
@@ -450,6 +468,8 @@ lowRightKaitoBtn.addEventListener("click", () => changeLowRightLight("lowrightka
 lowRightMeikoBtn.addEventListener("click", () => changeLowRightLight("lowrightmeiko"));
 lowRightOffBtn.addEventListener("click", () => changeLowRightLight(""));
 
+// お着替えボタン
+kigaeBtn.addEventListener("click", () => changeCostume());
 
 helpBtn.addEventListener("click", () => showHelp());
 playBtns[0].addEventListener("click", () => closeHelp());
@@ -534,6 +554,22 @@ function changeLowRightLight(id) {
     var light = document.getElementById(nowLowRightLight);
     light.style.display = "inline";
   }
+}
+
+// 衣装チェンジ
+function changeCostume() {
+  var body = document.getElementById("mikubody");
+  var cos = document.getElementById(nowCostume);
+  cos.style.display = "none";
+  body.style.display = "none";
+  var index = cosList.indexOf(nowCostume) + 1;
+  if (index == cosList.length) {
+    index = 0;
+  }
+  nowCostume = cosList[index];
+  cos = document.getElementById(cosList[index]);
+  cos.style.display = "inline";
+  body.style.display = "inline";
 }
 
 /* シークバー */

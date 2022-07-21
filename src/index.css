@@ -253,21 +253,7 @@ body {
   background: rgba(0 0 128 / 80%);
 }
 
-#uis{
-  position: absolute;
-  top:20px;
-  right:10px;
-}
-#uih{
-  position: absolute;
-  top:20px;
-  right:10px;
-}
-#bginfo{
-  position: absolute;
-  top:70px;
-  right:90px;
-}
+
 #bgselect{
   position: absolute;
   top:85px;
@@ -293,53 +279,7 @@ body {
   bottom:150px;
   right:20px;
 }
-#prevb{
-  margin-top: 15px;
-  margin-left: 10px; 
-  width: 50px;
-  height: 120px;
-}
-#nextb{
-  position: relative;
-  margin-left: 145px;
-  margin-top: -50px;
-  height: 120px;
-}
-#wak{
-  margin-left: -5px;
-  margin-top: -5px;
-  width: 150px;
-  height: 150px;
-}
-#createb{
-  margin-top: 10px;
-  margin-left: 15px;
-  width: 120px;
-  height: 50px;
-}
-#prerevb{
-  margin-left: 0px;
-  width: 120px;
-  height: 50px;
-}
-#lyricslider{position: relative;}
-#imgslider{position: relative;}
-#panel{
-  display: inline-block;
-  margin-top:100px; 
-  z-index: 10000;
-}
-#menu{
-  position: absolute;
-  top: 150px;
-  left: 280px;
-  width: 280px;
-  height: 170px;
-}
-#releaseb{position: relative; top: 20px; left: 305px;}
-#revb{    position: relative; top: 20px; left: 315px;}
-#deleteb{ position: relative; top: 10px; left: 305px;}
-#forwardb{position: relative; top: 10px; left: 315px;}
+
 #helpb{position: absolute; right: 150px; bottom: 120px;}
 .drag {
   z-index: 1001;

@@ -558,10 +558,8 @@ function changeLowRightLight(id) {
 
 // 衣装チェンジ
 function changeCostume() {
-  var body = document.getElementById("mikubody");
   var cos = document.getElementById(nowCostume);
   cos.style.display = "none";
-  body.style.display = "none";
   var index = cosList.indexOf(nowCostume) + 1;
   if (index == cosList.length) {
     index = 0;
@@ -569,7 +567,6 @@ function changeCostume() {
   nowCostume = cosList[index];
   cos = document.getElementById(cosList[index]);
   cos.style.display = "inline";
-  body.style.display = "inline";
 }
 
 /* シークバー */

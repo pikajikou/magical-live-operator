@@ -15,10 +15,12 @@ body {
   z-index: 100;
   flex-direction: column;
 }
-#overlay .explain{
+
+#overlay .explain {
   background: #e2e2e2;
   padding: 20px 100px 20px 100px;
 }
+
 #overlay .play {
   position: absolute;
   background: #cfdfd3;
@@ -58,6 +60,10 @@ body {
 
 #window .lowlightbtn {
   top: 705px;
+}
+
+#window .penlightbtn {
+  top: 745px;
 }
 
 #window .whitec {
@@ -163,6 +169,10 @@ body {
   display: none;
 }
 
+.penlightimg {
+  display: none;
+}
+
 #kigaebtn {
   position: absolute;
   width: 110px;
@@ -172,7 +182,17 @@ body {
   background: rgba(200, 200, 0, 0.8);
   z-index: 3;
 }
- 
+
+#penboundbtn {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  left: 140px;
+  top: 670px;
+  background: rgba(200, 200, 200, 0.8);
+  z-index: 3;
+}
+
 #container {
   width: 100%;
   height: 100%;
@@ -181,7 +201,7 @@ body {
   justify-content: center;
 }
 
-#container > div {
+#container>div {
   width: 100%;
 }
 
@@ -200,14 +220,14 @@ body {
   right: 10px;
   bottom: 10px;
   padding: 4px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 #header {
   position: absolute;
   left: 0;
   top: 10;
-  
+
 }
 
 #meta {
@@ -222,22 +242,24 @@ body {
   bottom: 5;
 }
 
-#footer > p {
+#footer>p {
   margin-left: 10px;
 }
 
 #control {
   margin: 10px;
   padding: 5px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
-#control > button {
+#control>button {
   margin-right: 5px;
 }
-#control > button:last-child {
+
+#control>button:last-child {
   margin-right: 0;
 }
+
 #seekbar {
   position: fixed;
   top: 0;
@@ -247,87 +269,127 @@ body {
   background: rgba(0 0 128 / 40%);
 }
 
-#seekbar > div {
+#seekbar>div {
   width: 0;
   height: 100%;
   background: rgba(0 0 128 / 80%);
 }
 
 
-#bgselect{
+#bgselect {
   position: absolute;
-  top:85px;
-  right:20px;
-}
-#strinfo{
-  position: absolute;
-  bottom:180px;
-  right:140px;
-}
-#strselect{
-  position: absolute;
-  bottom:180px;
-  right:20px;
-}
-#songtag{
-  position: absolute;
-  bottom:145px;
-  right:155px;
-}
-#songselect{
-  position: absolute;
-  bottom:150px;
-  right:20px;
+  top: 85px;
+  right: 20px;
 }
 
-#helpb{position: absolute; right: 150px; bottom: 120px;}
+#strinfo {
+  position: absolute;
+  bottom: 180px;
+  right: 140px;
+}
+
+#strselect {
+  position: absolute;
+  bottom: 180px;
+  right: 20px;
+}
+
+#songtag {
+  position: absolute;
+  bottom: 145px;
+  right: 155px;
+}
+
+#songselect {
+  position: absolute;
+  bottom: 150px;
+  right: 20px;
+}
+
+#helpb {
+  position: absolute;
+  right: 150px;
+  bottom: 120px;
+}
+
 .drag {
   z-index: 1001;
 }
 
-.sample{
+.sample {
   margin-top: 15px;
   margin-left: 15px;
 }
-.bound{
+
+.bound {
   position: absolute;
   /*margin: auto;*/
   animation: bound-anim 0.5s infinite;
 }
+
 @keyframes bound-anim {
-  0%,100% {transform: scale(1);}
-  30% {transform: scale(0.96,1.04);}
-  60% {transform: scale(1);}
-  90% {transform: scale(1.15,0.9);}
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(0.96, 1.04);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(1.15, 0.9);
+  }
 }
 
-.boundrev{
+.boundrev {
   position: absolute;
   /*margin: auto;*/
   animation: bound-anim-rev 0.5s infinite;
 }
+
 @keyframes bound-anim-rev {
-  0%,100% {transform: scale(-1, 1);}
-  30% {transform: scale(-0.96,1.04);}
-  60% {transform: scale(-1, 1);}
-  90% {transform: scale(-1.15,0.9);}
-}
-.reverse{
-  transform: scale(-1,1);
+
+  0%,
+  100% {
+    transform: scale(-1, 1);
+  }
+
+  30% {
+    transform: scale(-0.96, 1.04);
+  }
+
+  60% {
+    transform: scale(-1, 1);
+  }
+
+  90% {
+    transform: scale(-1.15, 0.9);
+  }
 }
 
-#showfield{
+.reverse {
+  transform: scale(-1, 1);
+}
+
+#showfield {
   position: absolute;
   top: 90px;
   left: 0px;
 
 }
-#showf{
+
+#showf {
   position: absolute;
   z-index: 0;
 }
 
-#reversef{
+#reversef {
   position: absolute;
   z-index: -1;
   left: 10px;
@@ -338,7 +400,7 @@ body {
   background: #63dfaf;
 }
 
-#recyclef{
+#recyclef {
   position: absolute;
   z-index: -1;
   margin: 10px;
@@ -367,7 +429,8 @@ body {
 }
 
 .disselectable {
-  -ms-user-select: none; /* IE 10+ */
+  -ms-user-select: none;
+  /* IE 10+ */
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -378,78 +441,91 @@ body {
   background-color: aqua;
 }
 
-#backb{
+#backb {
   margin-top: 5px;
   width: 82px;
 }
-#forwardb{
+
+#forwardb {
   margin-left: 1px;
 }
+
 .test {
   width: 30px;
   height: 30px;
-  padding:0;
-  margin:0;
-  background:none;
-  border:0;
-  font-size:0;
-  line-height:0;
-  overflow:visible;
-  cursor:pointer;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: 0;
+  font-size: 0;
+  line-height: 0;
+  overflow: visible;
+  cursor: pointer;
 }
 
 /* button */
-img.pushable:hover{
-	cursor: pointer;
+img.pushable:hover {
+  cursor: pointer;
 }
-img.pushable:active{
-	position: relative;
-	top: 3px;
+
+img.pushable:active {
+  position: relative;
+  top: 3px;
 }
 
 /* word animation */
-.str{
-  overflow : hidden;
+.str {
+  overflow: hidden;
   animation: kurukuru 1.5s forwards;
 }
+
 @keyframes popup {
   0% {
     transform: translateY(50px) scale(0.8);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0) scale(1.0);
   }
-  80%, 100% {
+
+  80%,
+  100% {
     opacity: 1;
   }
 }
+
 @keyframes kurukuru {
-  0%{
+  0% {
     transform: rotateY(0) translateY(40px);
     opacity: 0;
   }
-  100%{
+
+  100% {
     transform: rotateY(360deg) translateY(0);
     opacity: 1;
   }
 }
+
 @keyframes slidein {
-  0%{
+  0% {
     transform: translateX(20px);
     opacity: 0;
   }
-  100%{
+
+  100% {
     transform: translateX(0);
     opacity: 1;
   }
 }
+
 @keyframes slideup {
-  0%{
+  0% {
     transform: translateY(20px);
     opacity: 0;
   }
-  100%{
+
+  100% {
     transform: translateY(0);
     opacity: 1;
   }

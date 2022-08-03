@@ -18,6 +18,8 @@ var nowLowLeftLight = "";
 var nowUpRightLight = "";
 var nowMidRightLight = "";
 var nowLowRightLight = "";
+var nowPenlight = "penlightmiku";
+var penBoundFlg = false;
 
 var nowCostume = "mikudefault";
 
@@ -382,8 +384,21 @@ const lowRightKaitoBtn = document.querySelector("#lowrightkaitobtn");
 const lowRightMeikoBtn = document.querySelector("#lowrightmeikobtn");
 const lowRightOffBtn = document.querySelector("#lowrightoffbtn");
 
+//ペンライト
+const penlightWhiteBtn = document.querySelector("#penwhitebtn");
+const penlightMikuBtn = document.querySelector("#penmikubtn");
+const penlightRinBtn = document.querySelector("#penrinbtn");
+const penlightLenBtn = document.querySelector("#penlenbtn");
+const penlightLukaBtn = document.querySelector("#penlukabtn");
+const penlightKaitoBtn = document.querySelector("#penkaitobtn");
+const penlightMeikoBtn = document.querySelector("#penmeikobtn");
+const penlightOffBtn = document.querySelector("#penoffbtn");
+
 
 const kigaeBtn = document.querySelector("#kigaebtn");
+
+const penBoundBtn = document.querySelector("#penboundbtn");
+
 
 const helpBtn = document.querySelector("#helpb");
 const overlayplayBtn = document.getElementsByClassName("play");
@@ -468,8 +483,21 @@ lowRightKaitoBtn.addEventListener("click", () => changeLowRightLight("lowrightka
 lowRightMeikoBtn.addEventListener("click", () => changeLowRightLight("lowrightmeiko"));
 lowRightOffBtn.addEventListener("click", () => changeLowRightLight(""));
 
+// ペンライト
+penlightWhiteBtn.addEventListener("click", () => changePenLight("penlightwhite"));
+penlightMikuBtn.addEventListener("click", () => changePenLight("penlightmiku"));
+penlightRinBtn.addEventListener("click", () => changePenLight("penlightrin"));
+penlightLenBtn.addEventListener("click", () => changePenLight("penlightlen"));
+penlightLukaBtn.addEventListener("click", () => changePenLight("penlightluka"));
+penlightKaitoBtn.addEventListener("click", () => changePenLight("penlightkaito"));
+penlightMeikoBtn.addEventListener("click", () => changePenLight("penlightmeiko"));
+penlightOffBtn.addEventListener("click", () => changePenLight("penlightoff"));
+
 // お着替えボタン
 kigaeBtn.addEventListener("click", () => changeCostume());
+
+// ペンラ振りボタン
+penBoundBtn.addEventListener("click", () => changeBound());
 
 helpBtn.addEventListener("click", () => showHelp());
 playBtns[0].addEventListener("click", () => closeHelp());
@@ -556,6 +584,23 @@ function changeLowRightLight(id) {
   }
 }
 
+// ペンライトに色セット
+function changePenLight(id) {
+  if (nowPenlight) {
+    var light = document.getElementById(nowPenlight);
+    light.style.display = "none";
+    light.classList.remove('bound');
+  }
+  nowPenlight = id;
+  if (nowPenlight) {
+    var light = document.getElementById(nowPenlight);
+    light.style.display = "inline";
+    if (penBoundFlg) {
+      light.classList.add('bound');
+    }
+  }
+}
+
 // 衣装チェンジ
 function changeCostume() {
   var cos = document.getElementById(nowCostume);
@@ -567,6 +612,20 @@ function changeCostume() {
   nowCostume = cosList[index];
   cos = document.getElementById(cosList[index]);
   cos.style.display = "inline";
+}
+
+// ペンラバウンド制御
+function changeBound() {
+  var pen = document.getElementById(nowPenlight);
+  var btn = document.getElementById("penboundbtn");
+  if (!penBoundFlg) {
+    pen.classList.add('bound');
+    btn.textContent = "ペンラ止める";
+  } else {
+    pen.classList.remove('bound');
+    btn.textContent = "ペンラ振る！";
+  }
+  penBoundFlg = !penBoundFlg;
 }
 
 /* シークバー */
